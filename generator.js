@@ -5,16 +5,17 @@ var Generator = {
     i: 'y',
     s: 'z',
     tt: 'xt',
+    ohn: 'aughn',
     o: 'au',
     c: 'x',
     en: 'aughn',
-    ohn: 'aughn',
     an: 'aughn',
     r: 'rh',
     ph: 'f',
     f: 'ph',
     ew: 'u',
-    y: 'i'
+    y: 'i',
+    k: 'qu'
   },
 
   generate: function(name) {
@@ -29,11 +30,26 @@ var Generator = {
           break;
         }
       }
+      if(name[0] === name[1]){
+        name = name.slice(1);
+      }
       if(!found){
         newName += name[0];
         name = name.replace(name[0], '');
       }
     }
-    return newName;
+    return  newName.charAt(0).toUpperCase() + newName.slice(1);
+  },
+
+  buttonClicked: function() {
+    var input = document.querySelector('#name');
+    var name = input.value.toLowerCase();
+
+    document.querySelector('.title span').textContent = this.generate(name);
+  },
+  keyup: function(event) {
+    if(event.keyCode === 13) {
+      this.buttonClicked();
+    }
   }
 };

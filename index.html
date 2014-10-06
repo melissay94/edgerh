@@ -17,11 +17,11 @@
     </div>
 
     <div class="jumbotron">
+      <input type="text" id="name" class="form-control" placeholder="Enter your name" onkeyup="Generator.keyup(event)"></input>
       <h2 class="title">
-        <span class="text-muted">Loading...</span>
+        <span class="text-muted"></span>
       </h2>
-      <a class="btn btn-primary btn-lg more-button">Generate</a>
-      <p><small class="text-muted">or press space</small></p>
+      <button type='submit' class="btn btn-primary btn-lg more-button" onclick='Generator.buttonClicked()'>Generate</button>
     </div>
   </div>
 
