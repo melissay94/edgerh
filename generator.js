@@ -1,4 +1,3 @@
-'use strict';
 (function(){
   angular.module('generator', [])
     .controller('GeneratorController', GeneratorController);
