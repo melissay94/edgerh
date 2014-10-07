@@ -47,7 +47,7 @@
     }
 
     $scope.$watch('name', function(newValue, oldValue) {
-      $scope.display = generate(newValue);
+      $scope.display = generate(newValue.toLowerCase());
     });
   }
 })();
