@@ -5,3 +5,12 @@
 .jumbotron {
   text-align: center;
 }
+
+.btn {
+	display: block;
+	margin: 20px auto 20px auto;
+}
+
+.text-muted {
+	font-size: 40px;
+}

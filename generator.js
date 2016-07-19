@@ -1,29 +1,32 @@
-(function(){
-  angular.module('generator', [])
-    .controller('GeneratorController', GeneratorController);
 
-  function GeneratorController($scope){
-    var rules = {
-      i: 'y',
-      s: 'z',
-      tt: 'xt',
-      ohn: 'aughn',
-      o: 'au',
-      c: 'x',
-      en: 'aughn',
-      an: 'aughn',
-      r: 'rh',
-      ph: 'f',
-      f: 'ph',
-      ew: 'u',
-      y: 'i',
-      k: 'qu'
-    };
+var app = angular.module('edgerhApp', []);
 
-    $scope.name = '';
+app.controller('GeneratorController', function($scope, $filter, NounList) {
 
-    function generate(name) {
-      var newName = "";
+  $scope.name = '';
+  $scope.display = '';
+  $scope.noun = '';
+  $scope.ultimate = '';
+
+  var rules = {
+    i: 'y',
+    s: 'z',
+    tt: 'xt',
+    ohn: 'aughn',
+    o: 'au',
+    c: 'x',
+    en: 'aughn',
+    an: 'aun',
+    r: 'rh',
+    ph: 'f',
+    f: 'ph',
+    ew: 'u',
+    y: 'i',
+    k: 'qu'
+  }; 
+
+  function generateEdgerhName(name) {
+    var newName = "";
       while(name.length > 0) {
         var found = false;
         for(var rule in rules) {
@@ -43,10 +46,24 @@
         }
       }
       return  newName.charAt(0).toUpperCase() + newName.slice(1);
-    }
-
-    $scope.$watch('name', function(newValue, oldValue) {
-      $scope.display = generate(newValue.toLowerCase());
-    });
   }
-})();
+
+  $scope.getRandomNoun = function() {
+    var randomIndex = Math.floor(Math.random() * (NounList.length + 1));
+    $scope.noun = (NounList[randomIndex]).charAt(0).toUpperCase() + (NounList[randomIndex]).slice(1);
+  }
+
+  $scope.generateEdgerhNoun = function() {
+    $scope.ultimate = generateEdgerhName($scope.noun);
+  }
+
+  $scope.$watch('name', function(newValue, oldValue) {
+    $scope.display = generateEdgerhName(newValue.toLowerCase());
+      
+  });
+
+
+});
+
+
+
