@@ -5,8 +5,8 @@ app.controller('GeneratorController', function($scope, $filter, NounList) {
 
   $scope.name = '';
   $scope.display = '';
-  $scope.noun = '';
-  $scope.ultimate = '';
+  $scope.noun = 'Popcorn';
+  $scope.ultimate = 'Popxorhn';
 
   var rules = {
     i: 'y',
@@ -51,9 +51,6 @@ app.controller('GeneratorController', function($scope, $filter, NounList) {
   $scope.getRandomNoun = function() {
     var randomIndex = Math.floor(Math.random() * (NounList.length + 1));
     $scope.noun = (NounList[randomIndex]).charAt(0).toUpperCase() + (NounList[randomIndex]).slice(1);
-  }
-
-  $scope.generateEdgerhNoun = function() {
     $scope.ultimate = generateEdgerhName($scope.noun);
   }
 
