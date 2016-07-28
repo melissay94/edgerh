@@ -31,17 +31,25 @@ app.controller('GeneratorController', function($scope, $filter, NounList) {
         var found = false;
         for(var rule in rules) {
           if(name.indexOf(rule) === 0){
-            newName += rules[rule];
+            // KEEPS OUT FUCKING DOUBLES OF ALL KINDS
+            if (newName.length < 3) {
+              if (newName.substr(newName.length-(rules[rule]).length, newName.length) != rules[rule]) 
+                newName += rules[rule];
+            } else {
+              if (newName.substr(newName.length-(rules[rule]).length, newName.length-1) != rules[rule]) 
+                newName += rules[rule];
+            }
+
             name = name.replace(rule, '');
             found = true;
             break;
           }
         }
-        if(name[0] === name[1]){
-          name = name.slice(1);
-        }
         if(!found){
-          newName += name[0];
+          // YOU FUCKERS TOO, NO DOUBLES
+          if (newName[newName.length-1] != name[0])
+            newName += name[0];
+
           name = name.replace(name[0], '');
         }
       }
