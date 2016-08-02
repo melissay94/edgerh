@@ -25,6 +25,10 @@ app.controller('GeneratorController', function($scope, $filter, NounList) {
     k: 'qu'
   }; 
 
+ $scope.sayName = function(name){
+    responsiveVoice.speak(name, "UK English Female");
+  }
+
   function generateEdgerhName(name) {
     var newName = "";
       while(name.length > 0) {

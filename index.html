@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.4/angular.min.js'></script>
+  <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 </head>
 
 <body ng-app='edgerhApp'>
@@ -21,6 +22,7 @@
       <input type="text" class="form-control" placeholder="Enter your name" ng-model='name'></input>
       <h2 class="title">
         <span class="text-muted">{{ display }}</span>
+          <button class='btn btn-secondary talk' ng-click="sayName(display)"><img src="volume-loudspeaker.png" alt="speaker" /></button>
       </h2>
     </div>
     <div class="jumbotron">
@@ -28,9 +30,13 @@
       <span class="text-muted">{{ noun }}</span>
       <h2><small>We ran it through the converter for ya!</small></h2>
       <span class="text-muted">{{ ultimate }}</span>
+      <button class='btn btn-secondary talk' ng-click="sayName(ultimate)"><img src="volume-loudspeaker.png" alt="speaker" /></button>
       <button class='btn btn-primary' ng-click="getRandomNoun()">Randomize the Edginess!</button>
     </div>
   </div>
+
+  <div style="float:right;"><a href="http://responsivevoice.org">ResponsiveVoice-NonCommercial</a> 
+  <span style="display: block;">licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/95x15.png" alt="95x15" width="95" height="15" /></a></span></div>
 
   <!-- Module and Controller -->
   <script src="generator.js"></script>
