@@ -1,14 +1,30 @@
+h1 {
+		color: #3ccfaf;
+}
+
+h1 small {
+	color: #555;
+}
+
 .container {
   max-width: 768px;
 }
 
 .jumbotron {
   text-align: center;
+  background-color: #eee;
 }
 
 .btn {
 	display: block;
 	margin: 20px auto 20px auto;
+	padding: 5px;
+	border: none;
+	background-color: #3ccfaf;
+}
+
+.btn:hover {
+	background-color: #35B599;
 }
 
 .text-muted {
@@ -20,6 +36,7 @@
 	display: inline;
 	float: right;
 	margin:0px;
+	background-color: #eee;
 }
 
 .talk img {
