@@ -15,7 +15,12 @@ h1 small {
   background-color: #eee;
 }
 
-.btn {
+.jumbotron h4 {
+	margin-top: 30px;
+	margin-bottom: 0px;
+}
+
+.btn, .btn:focus {
 	display: block;
 	margin: 20px auto 20px auto;
 	padding: 5px;
@@ -32,11 +37,15 @@ h1 small {
 	padding: 10px;
 }
 
-.talk {
+.talk, .talk:focus {
 	display: inline;
 	float: right;
 	margin:0px;
 	background-color: #eee;
+}
+
+.talk:hover {
+	background-color: #ddd;
 }
 
 .talk img {

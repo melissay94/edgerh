@@ -17,13 +17,13 @@
     <div class="page-header">
       <h1>Edgerh <small>Edgier names for edgier people</small></h1>
     </div>
-
     <div class="jumbotron">
       <input type="text" class="form-control" placeholder="Enter your name" ng-model='name'></input>
       <h2 class="title">
         <span class="text-muted">{{ display }}</span>
-          <button class='btn btn-secondary talk' ng-click="sayName(display)"><img src="volume-loudspeaker.png" alt="speaker" /></button>
+        <button class='btn btn-secondary talk' ng-click="sayName(display)"><img src="volume-loudspeaker.png" alt="speaker" /></button>
       </h2>
+      <h4>{{ calculation }}</h4>
     </div>
     <div class="jumbotron">
       <h2>Want something a little edgierh?</h2>
@@ -31,10 +31,10 @@
       <h2><small>We ran it through the converter for ya!</small></h2>
       <span class="text-muted">{{ ultimate }}</span>
       <button class='btn btn-secondary talk' ng-click="sayName(ultimate)"><img src="volume-loudspeaker.png" alt="speaker" /></button>
+      <h4>{{ ultimateCalc }}</h4>
       <button class='btn btn-primary' ng-click="getRandomNoun()">Randomize the Edginess!</button>
     </div>
   </div>
-
   <div style="float:right;"><a href="http://responsivevoice.org">ResponsiveVoice-NonCommercial</a> 
   <span style="display: block;">licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/95x15.png" alt="95x15" width="95" height="15" /></a></span></div>
 
